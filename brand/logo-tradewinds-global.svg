@@ -1,0 +1,208 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TradeWinds Global logo">
+  <defs>
+    <!-- Ship hull gradient: gold bow → white → light blue → dark blue -->
+    <linearGradient id="hullGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="12%" stop-color="#f59e0b"/>
+      <stop offset="22%" stop-color="#f8fafc"/>
+      <stop offset="40%" stop-color="#93c5fd"/>
+      <stop offset="65%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+
+    <!-- Container accent gradient (matches hull) -->
+    <linearGradient id="contGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="20%" stop-color="#f8fafc"/>
+      <stop offset="50%" stop-color="#93c5fd"/>
+      <stop offset="75%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+
+    <!-- Bow highlight (gold leading edge) -->
+    <linearGradient id="bowGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="40%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+
+    <!-- Water reflection -->
+    <linearGradient id="waterLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.35"/>
+      <stop offset="25%" stop-color="#f8fafc" stop-opacity="0.15"/>
+      <stop offset="55%" stop-color="#3b82f6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0.35"/>
+    </linearGradient>
+
+    <!-- Drop shadow for containers -->
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- Illuminated bow glow -->
+    <radialGradient id="bowGlow" cx="0.05" cy="0.35" r="0.4" fx="0.05" fy="0.35">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ============================================================ -->
+  <!-- BACKGROUND glow -->
+  <!-- ============================================================ -->
+  <rect width="800" height="600" fill="url(#bowGlow)" opacity="0.5"/>
+
+  <!-- ============================================================ -->
+  <!-- SHIPPING CONTAINERS (stacked on the bow)                      -->
+  <!-- ============================================================ -->
+  <g transform="translate(160, 60)">
+
+    <!-- Container shadow -->
+    <ellipse cx="400" cy="210" rx="260" ry="20" fill="#000" opacity="0.08"/>
+
+    <!-- === STACK 1 — Rear container (dark, pushed back, partially visible) === -->
+    <g opacity="0.6">
+      <rect x="320" y="15" width="110" height="180" rx="4" fill="#1e293b" stroke="rgba(148,163,184,0.2)" stroke-width="1.5"/>
+      <!-- Corrugation lines -->
+      <line x1="375" y1="20" x2="375" y2="190" stroke="rgba(148,163,184,0.08)" stroke-width="1"/>
+      <line x1="330" y1="80" x2="420" y2="80" stroke="rgba(148,163,184,0.08)" stroke-width="1"/>
+      <line x1="330" y1="130" x2="420" y2="130" stroke="rgba(148,163,184,0.08)" stroke-width="1"/>
+      <!-- Color band -->
+      <rect x="325" y="28" width="80" height="28" rx="2" fill="url(#contGrad)" opacity="0.35"/>
+      <rect x="325" y="135" width="80" height="28" rx="2" fill="url(#contGrad)" opacity="0.35"/>
+    </g>
+
+    <!-- === STACK 2 — Mid-container (gray-blue) === -->
+    <g opacity="0.75" filter="url(#shadow)">
+      <rect x="300" y="30" width="125" height="220" rx="4" fill="#334155" stroke="rgba(148,163,184,0.25)" stroke-width="1.5"/>
+      <line x1="362" y1="35" x2="362" y2="245" stroke="rgba(148,163,184,0.1)" stroke-width="1"/>
+      <line x1="310" y1="95" x2="415" y2="95" stroke="rgba(148,163,184,0.1)" stroke-width="1"/>
+      <line x1="310" y1="155" x2="415" y2="155" stroke="rgba(148,163,184,0.1)" stroke-width="1"/>
+      <line x1="310" y1="215" x2="415" y2="215" stroke="rgba(148,163,184,0.1)" stroke-width="1"/>
+      <rect x="305" y="42" width="100" height="32" rx="2" fill="url(#contGrad)" opacity="0.45"/>
+      <rect x="305" y="160" width="100" height="32" rx="2" fill="url(#contGrad)" opacity="0.45"/>
+    </g>
+
+    <!-- === STACK 3 — Front container (darkest, highest contrast) === -->
+    <g filter="url(#shadow)">
+      <rect x="390" y="0" width="120" height="265" rx="4" fill="#0f172a" stroke="rgba(148,163,184,0.3)" stroke-width="2"/>
+      <!-- Corrugated metal grooves -->
+      <line x1="450" y1="5" x2="450" y2="260" stroke="rgba(148,163,184,0.12)" stroke-width="1"/>
+      <line x1="400" y1="55" x2="500" y2="55" stroke="rgba(148,163,184,0.12)" stroke-width="1"/>
+      <line x1="400" y1="105" x2="500" y2="105" stroke="rgba(148,163,184,0.12)" stroke-width="1"/>
+      <line x1="400" y1="155" x2="500" y2="155" stroke="rgba(148,163,184,0.12)" stroke-width="1"/>
+      <line x1="400" y1="205" x2="500" y2="205" stroke="rgba(148,163,184,0.12)" stroke-width="1"/>
+      <!-- Color bands (gold → white → blue) -->
+      <rect x="395" y="10" width="90" height="30" rx="2" fill="url(#contGrad)" opacity="0.55"/>
+      <rect x="395" y="110" width="90" height="30" rx="2" fill="url(#contGrad)" opacity="0.55"/>
+      <!-- Corner reinforcement detail -->
+      <rect x="390" y="0" width="16" height="16" rx="2" fill="rgba(148,163,184,0.06)" stroke="rgba(148,163,184,0.15)" stroke-width="1"/>
+      <rect x="494" y="0" width="16" height="16" rx="2" fill="rgba(148,163,184,0.06)" stroke="rgba(148,163,184,0.15)" stroke-width="1"/>
+    </g>
+
+    <!-- === STACK 4 — Top container on stack 3 === -->
+    <g filter="url(#shadow)">
+      <rect x="400" y="-35" width="85" height="52" rx="3" fill="#1e293b" stroke="rgba(148,163,184,0.2)" stroke-width="1.5"/>
+      <rect x="405" y="-26" width="55" height="18" rx="1.5" fill="url(#contGrad)" opacity="0.45"/>
+    </g>
+
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- SHIP BOW (HULL)                                               -->
+  <!-- ============================================================ -->
+
+  <!-- Hull shadow -->
+  <ellipse cx="400" cy="445" rx="340" ry="15" fill="#000" opacity="0.12"/>
+
+  <!-- Main hull body (gold bow → gradient back) -->
+  <g filter="url(#shadow)">
+    <path d="
+      M 25   290
+      C 145  270, 280  280, 720  300
+      L 720  410
+      C 280  430, 145  420, 25   390
+      Z
+    " fill="url(#hullGrad)" stroke="rgba(148,163,184,0.2)" stroke-width="1.5"/>
+
+    <!-- Gold bow edge (the prow cutwater) -->
+    <path d="
+      M 25   290
+      C 80   278, 140  280, 200  290
+      L 195  385
+      C 140  395, 80   392, 25   390
+      Z
+    " fill="url(#bowGrad)" opacity="0.85"/>
+
+    <!-- Bow leading edge line (razor sharp) -->
+    <path d="M 20 288 L 25 290 C 145 270, 280 280, 720 300" 
+      stroke="#d97706" stroke-width="1" fill="none" opacity="0.3"/>
+  </g>
+
+  <!-- Deck line (railing) -->
+  <path d="M 30 295 C 145 275, 280 285, 720 305" 
+    stroke="rgba(255,255,255,0.1)" stroke-width="1.5" fill="none"/>
+
+  <!-- Deck railing details (port holes) -->
+  <g opacity="0.15">
+    <circle cx="180" cy="295" r="3" fill="#f8fafc"/>
+    <circle cx="240" cy="292" r="3" fill="#f8fafc"/>
+    <circle cx="300" cy="290" r="3" fill="#93c5fd"/>
+    <circle cx="360" cy="289" r="3" fill="#60a5fa"/>
+    <circle cx="420" cy="289" r="3" fill="#3b82f6"/>
+    <circle cx="480" cy="291" r="3" fill="#3b82f6"/>
+    <circle cx="540" cy="293" r="3" fill="#2563eb"/>
+    <circle cx="600" cy="296" r="3" fill="#1d4ed8"/>
+    <circle cx="660" cy="299" r="3" fill="#1e40af"/>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- WATER LINE & WAVES                                            -->
+  <!-- ============================================================ -->
+
+  <!-- Primary water surface -->
+  <path d="
+    M 22   395
+    C 80   405, 140  400, 200  408
+    C 260  416, 320  400, 380  412
+    C 440  424, 500  406, 560  416
+    C 620  426, 680  410, 725  418
+  " stroke="url(#waterLine)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- Secondary wave -->
+  <path d="
+    M 50   410
+    C 110  418, 170  412, 230  420
+    C 290  428, 350  414, 420  424
+    C 490  434, 550  418, 620  426
+    C 680  434, 710  420, 730  424
+  " stroke="url(#waterLine)" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.35"/>
+
+  <!-- Bow wave (gold splash at the prow) -->
+  <path d="
+    M 25   390
+    C 15   380, 10   370, 18   358
+    C 22   350, 30   348, 32   340
+  " stroke="#f59e0b" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.45"/>
+
+  <path d="
+    M 30   392
+    C 20   386, 12   375, 22   365
+  " stroke="#fbbf24" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.3"/>
+
+  <!-- Water splash droplets -->
+  <circle cx="16" cy="352" r="2" fill="#f59e0b" opacity="0.3"/>
+  <circle cx="8" cy="368" r="1.5" fill="#f59e0b" opacity="0.25"/>
+  <circle cx="28" cy="344" r="1.5" fill="#fbbf24" opacity="0.2"/>
+
+  <!-- ============================================================ -->
+  <!-- BOW HIGHLIGHT (gold reflection on front edge)                 -->
+  <!-- ============================================================ -->
+  <path d="
+    M 25   290
+    C 50   282, 90   278, 130  284
+    L 128  386
+    C 90   388, 50   384, 25   390
+    Z
+  " fill="#f59e0b" opacity="0.08"/>
+
+</svg>

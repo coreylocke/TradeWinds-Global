@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TradeWinds Global | Premium Retail</title>
+<meta name="description" content="TradeWinds Global — premium e-commerce retail. Curated products across beauty, home, kitchen, outdoor, pet supplies, and more.">
+<meta name="theme-color" content="#0a0f1a">
+<link rel="canonical" href="https://tradewindsglobal.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="TradeWinds Global | Premium Retail">
+<meta property="og:description" content="Curated products across beauty, home, kitchen, outdoor, pet supplies, and more.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#0a0f1a;
+    --bg2:#111827;
+    --bg3:#1a2235;
+    --card:#1a2235;
+    --card-hover:#1e2a42;
+    --ink:#f1f5f9;
+    --mut:#94a3b8;
+    --mut2:#64748b;
+    --accent:#3b82f6;
+    --accent-hover:#2563eb;
+    --accent-dim:rgba(59,130,246,.12);
+    --accent-glow:rgba(59,130,246,.25);
+    --success:#22c55e;
+    --gold:#f59e0b;
+    --gold-hover:#d97706;
+    --line:rgba(148,163,184,.1);
+    --line-soft:rgba(148,163,184,.06);
+    --body:"Inter",-apple-system,sans-serif;
+    --display:"Playfair Display",Georgia,serif;
+    --pad:clamp(16px,4vw,48px);
+    --maxw:1280px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:var(--body);font-size:15px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{cursor:pointer;font-family:var(--body)}
+
+  .shell{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+
+  .skip{position:absolute;left:-9999px}
+  .skip:focus{left:12px;top:12px;z-index:99;background:var(--accent);color:#fff;padding:10px 14px;font-size:14px;border-radius:6px}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+  /* ---------- header ---------- */
+  .top{position:sticky;top:0;z-index:50;background:rgba(10,15,26,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+  .top-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+  .brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+  .brand-icon{width:36px;height:36px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:16px;color:#fff;line-height:1;flex:none}
+  .brand-txt{font-family:var(--display);font-weight:700;font-size:18px;line-height:1.2;letter-spacing:-.01em}
+  .brand-txt .sub{display:block;font-family:var(--body);font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mut2);margin-top:-2px}
+  .desk-nav{display:flex;align-items:center;gap:24px}
+  .desk-nav a{font-size:13px;font-weight:500;color:var(--mut);padding:6px 0;transition:color .18s;position:relative}
+  .desk-nav a:hover,.desk-nav a.active{color:var(--ink)}
+  .nav-right{display:flex;align-items:center;gap:12px}
+  .cart-btn{position:relative;background:var(--bg2);border:1px solid var(--line);color:var(--ink);padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;transition:border-color .18s}
+  .cart-btn:hover{border-color:var(--accent)}
+  .cart-count{background:var(--accent);color:#fff;font-size:10px;font-weight:700;padding:1px 6px;border-radius:10px;line-height:1.4;min-width:18px;text-align:center}
+  .icon-cart{width:18px;height:18px;display:block}
+  .menu-btn{display:none;background:none;border:none;color:var(--ink);padding:8px;cursor:pointer}
+  .menu-btn svg{width:24px;height:24px;display:block}
+  @media(max-width:860px){
+    .desk-nav{display:none}
+    .menu-btn{display:block}
+  }
+
+  .mob-nav{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;background:rgba(10,15,26,.98);backdrop-filter:blur(16px);z-index:49;flex-direction:column;padding:24px var(--pad);overflow-y:auto}
+  .mob-nav.open{display:flex}
+  .mob-nav a{font-size:16px;font-weight:500;color:var(--ink);padding:14px 0;border-bottom:1px solid var(--line);letter-spacing:.02em}
+  .mob-nav a:hover{color:var(--accent)}
+
+  /* ---------- HERO with full-bleed image ---------- */
+  .hero{position:relative;min-height:clamp(420px,60vh,640px);display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center center}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:rgba(10,15,26,.5);z-index:1}
+  .hero .shell{position:relative;z-index:2;padding:clamp(60px,8vw,100px) var(--pad)}
+  .hero-tag{display:inline-flex;align-items:center;gap:6px;background:var(--accent-dim);border:1px solid rgba(59,130,246,.2);padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;color:var(--accent);margin-bottom:24px}
+  .hero-tag span{width:6px;height:6px;background:var(--accent);border-radius:50%;display:block;animation:pulse 2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.4rem,5.5vw,4.2rem);line-height:1.05;letter-spacing:-.02em;margin:0;max-width:16ch}
+  .hero h1 .accent{color:var(--accent)}
+  .hero h1 .gold{color:var(--gold)}
+  .hero .lede{font-size:clamp(1rem,1.3vw,1.15rem);color:var(--mut);max-width:56ch;margin:20px 0 0;line-height:1.7}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-size:14px;font-weight:600;padding:14px 24px;transition:.18s ease;border-radius:8px;cursor:pointer;border:none;line-height:1;font-family:var(--body)}
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px);box-shadow:0 4px 14px var(--accent-glow)}
+  .btn-outline{color:var(--ink);border:1px solid var(--line);background:transparent}
+  .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+  .btn-sm{font-size:12px;padding:10px 16px}
+  .btn-gold{background:var(--gold);color:#0a0f1a}
+  .btn-gold:hover{background:var(--gold-hover)}
+
+  /* ---------- category chips ---------- */
+  .cat-strip{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;overflow:hidden}
+  .cat-track{display:flex;gap:8px;overflow-x:auto;padding:0 var(--pad);-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .cat-track::-webkit-scrollbar{display:none}
+  .cat-chip{flex-shrink:0;padding:8px 16px;background:var(--bg3);border:1px solid var(--line);border-radius:20px;font-size:12px;font-weight:500;color:var(--mut);transition:all .18s;cursor:pointer;user-select:none;white-space:nowrap}
+  .cat-chip:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+  .cat-chip.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+  /* ---------- featured ---------- */
+  .featured-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
+  @media(max-width:1100px){.featured-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:820px){.featured-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:500px){.featured-grid{grid-template-columns:1fr}}
+
+  .section-header{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:4px;flex-wrap:wrap}
+  .section-header h2{font-family:var(--display);font-weight:700;font-size:clamp(1.3rem,2.2vw,1.8rem);margin:0;letter-spacing:-.01em}
+  .section-header .view-all{font-size:13px;font-weight:600;color:var(--accent);transition:color .18s}
+  .section-header .view-all:hover{color:var(--accent-hover)}
+  .section{padding:clamp(40px,6vw,72px) 0;border-bottom:1px solid var(--line)}
+
+  /* ---------- product card ---------- */
+  .product-card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:all .25s ease;display:flex;flex-direction:column}
+  .product-card:hover{transform:translateY(-3px);border-color:rgba(59,130,246,.25);box-shadow:0 8px 30px rgba(0,0,0,.3)}
+  .product-image-wrap{position:relative;aspect-ratio:1;background:var(--bg2);overflow:hidden}
+  .product-image-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+  .product-card:hover .product-image-wrap img{transform:scale(1.05)}
+  .product-badge{position:absolute;top:10px;left:10px;background:var(--accent);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.06em}
+  .product-badge.sale{background:#ef4444}
+  .product-badge.bestseller{background:var(--gold);color:#0a0f1a}
+  .product-body{padding:14px 16px 16px;flex:1;display:flex;flex-direction:column}
+  .product-category{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--mut2);margin-bottom:4px}
+  .product-title{font-weight:600;font-size:14px;line-height:1.3;margin-bottom:6px;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .product-price{display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:10px}
+  .price-current{font-weight:700;font-size:17px;color:var(--ink)}
+  .price-compare{font-size:13px;color:var(--mut2);text-decoration:line-through}
+  .add-to-cart{margin-top:12px;width:100%;background:var(--accent);color:#fff;border:none;padding:10px;border-radius:6px;font-size:13px;font-weight:600;transition:background .18s}
+  .add-to-cart:hover{background:var(--accent-hover)}
+  .add-to-cart.added{background:var(--success)}
+
+  /* ---------- categories grid ---------- */
+  .cat-section-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+  @media(max-width:860px){.cat-section-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:500px){.cat-section-grid{grid-template-columns:1fr}}
+  .cat-section-card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:28px 20px;text-align:center;transition:all .25s ease;cursor:pointer}
+  .cat-section-card:hover{transform:translateY(-2px);border-color:var(--accent)}
+  .cat-section-card .icon{margin-bottom:12px;font-size:28px;line-height:1}
+  .cat-section-card h3{font-size:14px;font-weight:600;margin:0 0 4px}
+  .cat-section-card p{font-size:12px;color:var(--mut);margin:0}
+
+  /* ---------- features stripe ---------- */
+  .features{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
+  @media(max-width:860px){.features{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:500px){.features{grid-template-columns:1fr}}
+  .feature-card{text-align:center;padding:24px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+  .feature-card .icon{font-size:28px;margin-bottom:10px;line-height:1}
+  .feature-card h3{font-size:14px;font-weight:600;margin:0 0 4px}
+  .feature-card p{font-size:12px;color:var(--mut);margin:0}
+
+  /* ---------- newsletter ---------- */
+  .newsletter{background:var(--bg2);border-radius:16px;padding:clamp(32px,5vw,60px);text-align:center;border:1px solid var(--line);margin-top:26px}
+  .newsletter h2{font-family:var(--display);font-weight:700;font-size:clamp(1.3rem,2.2vw,1.8rem);margin:0 0 8px}
+  .newsletter p{color:var(--mut);max-width:44ch;margin:0 auto 24px;font-size:14px}
+  .newsletter-form{display:flex;gap:10px;max-width:460px;margin:0 auto}
+  .newsletter-form input{flex:1;background:var(--bg3);border:1px solid var(--line);color:var(--ink);padding:12px 16px;border-radius:8px;font-size:14px;outline:none;transition:border-color .18s;font-family:var(--body)}
+  .newsletter-form input:focus{border-color:var(--accent)}
+  .newsletter-form input::placeholder{color:var(--mut2)}
+  @media(max-width:500px){.newsletter-form{flex-direction:column}}
+
+  /* ---------- cart drawer ---------- */
+  .cart-overlay{display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.6)}
+  .cart-overlay.open{display:block}
+  .cart-drawer{position:fixed;top:0;right:0;bottom:0;width:420px;max-width:100vw;z-index:101;background:var(--bg2);border-left:1px solid var(--line);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .3s ease}
+  .cart-drawer.open{transform:translateX(0)}
+  .cart-header{display:flex;align-items:center;justify-content:space-between;padding:20px var(--pad);border-bottom:1px solid var(--line)}
+  .cart-header h2{font-size:18px;font-weight:700;margin:0}
+  .cart-close{background:none;border:none;color:var(--ink);padding:6px;font-size:20px;line-height:1}
+  .cart-items{flex:1;overflow-y:auto;padding:16px var(--pad)}
+  .cart-empty{text-align:center;padding:40px 0;color:var(--mut2);font-size:14px}
+  .cart-item{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .cart-item img{width:64px;height:64px;border-radius:8px;object-fit:cover;flex:none;background:var(--bg3)}
+  .cart-item-info{flex:1}
+  .cart-item-info h4{font-size:14px;font-weight:600;margin:0 0 4px}
+  .cart-item-info .meta{font-size:12px;color:var(--mut2)}
+  .cart-item-qty{display:flex;align-items:center;gap:8px;margin-top:6px}
+  .cart-item-qty button{width:26px;height:26px;border-radius:6px;border:1px solid var(--line);background:var(--bg3);color:var(--ink);font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center}
+  .cart-item-qty button:hover{border-color:var(--accent)}
+  .cart-item-qty span{font-size:14px;font-weight:600;min-width:20px;text-align:center}
+  .cart-footer{padding:16px var(--pad) 24px;border-top:1px solid var(--line)}
+  .cart-total{display:flex;justify-content:space-between;font-size:16px;font-weight:700;margin-bottom:14px}
+  .checkout-btn{width:100%;padding:14px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:700;transition:background .18s}
+  .checkout-btn:hover{background:var(--accent-hover)}
+  .checkout-btn:disabled{opacity:.5;cursor:not-allowed}
+
+  /* ---------- loading states ---------- */
+  .loading-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
+  @media(max-width:1100px){.loading-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:820px){.loading-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:500px){.loading-grid{grid-template-columns:1fr}}
+  .skeleton{background:var(--bg3);border-radius:12px;aspect-ratio:1;animation:shimmer 1.8s ease-in-out infinite;background:linear-gradient(90deg,var(--bg3) 25%,var(--card) 50%,var(--bg3) 75%);background-size:200% 100%}
+  @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--bg2);border-top:1px solid var(--line);padding:48px 0 56px;margin-top:0}
+  .foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+  @media(max-width:860px){.foot-top{grid-template-columns:1fr 1fr;gap:32px}}
+  @media(max-width:500px){.foot-top{grid-template-columns:1fr}}
+  .foot-brand .brand-txt{font-size:20px}
+  .foot-brand p{font-size:13px;color:var(--mut);margin:12px 0 0;max-width:32ch;line-height:1.6}
+  .foot-col h4{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--mut2);margin:0 0 14px}
+  .foot-col a{display:block;font-size:13px;color:var(--mut);padding:4px 0;transition:color .18s}
+  .foot-col a:hover{color:var(--accent)}
+  .foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:24px;border-top:1px solid var(--line);font-size:12px;color:var(--mut2)}
+  .foot-socials{display:flex;gap:12px}
+  .foot-socials a{color:var(--mut2);transition:color .18s}
+  .foot-socials a:hover{color:var(--accent)}
+
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:200;background:var(--bg3);border:1px solid var(--line);padding:12px 20px;border-radius:10px;font-size:14px;font-weight:500;color:var(--ink);box-shadow:0 8px 30px rgba(0,0,0,.4);opacity:0;visibility:hidden;transition:all .3s ease}
+  .toast.show{opacity:1;visibility:visible;bottom:32px}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="shell top-in">
+    <a class="brand" href="/" aria-label="TradeWinds Global, home">
+      <div class="brand-icon">TW</div>
+      <span class="brand-txt">TradeWinds<span class="sub">Global</span></span>
+    </a>
+    <nav class="desk-nav" aria-label="Main">
+      <a href="#featured" data-nav>Shop</a>
+      <a href="#categories" data-nav>Categories</a>
+      <a href="#deals" data-nav>Deals</a>
+      <a href="#about" data-nav>About</a>
+    </nav>
+    <div class="nav-right">
+      <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+        <svg class="icon-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mob-nav" id="mobNav" aria-label="Mobile navigation">
+  <a href="#featured" data-nav>Shop</a>
+  <a href="#categories" data-nav>Categories</a>
+  <a href="#deals" data-nav>Deals</a>
+  <a href="#about" data-nav>About</a>
+</nav>
+
+<!-- ============================================================ -->
+<!-- HERO — Full-bleed ship image with dark overlay                -->
+<!-- ============================================================ -->
+<div class="hero" id="top">
+  <div class="hero-bg">
+    <img src="assets/hero-bg.jpg" alt="Maersk container ship at sea" loading="eager">
+  </div>
+  <div class="shell">
+    <div class="hero-tag"><span></span> Premium E-Commerce</div>
+    <h1>Global shipping.<br><span class="gold">Smart retail.</span></h1>
+    <p class="lede">TradeWinds Global curates premium products across every category — from home essentials to outdoor gear. Every item, vetted. Every price, fair.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#featured">Start Shopping</a>
+      <a class="btn btn-outline" href="#categories">Browse Categories</a>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- Category Strip -->
+<div class="cat-strip" id="catStrip">
+  <div class="cat-track" id="catTrack"></div>
+</div>
+
+<!-- Featured Products -->
+<div class="shell">
+  <section class="section" id="featured">
+    <div class="section-header">
+      <h2>Featured Products</h2>
+      <a href="#categories" class="view-all">All Categories →</a>
+    </div>
+    <div class="loading-grid" id="featuredLoading">
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+    </div>
+    <div class="featured-grid" id="featuredGrid" style="display:none"></div>
+  </section>
+</div>
+
+<!-- Categories Section -->
+<div class="shell">
+  <section class="section" id="categories">
+    <div class="section-header">
+      <h2>Shop by Category</h2>
+    </div>
+    <div class="cat-section-grid" id="catGrid">
+      <div class="cat-section-card" data-cat="Beauty & Personal Care"><div class="icon">💄</div><h3>Beauty & Personal Care</h3><p>Skincare, cosmetics, grooming essentials</p></div>
+      <div class="cat-section-card" data-cat="Home & Kitchen"><div class="icon">🏠</div><h3>Home & Kitchen</h3><p>Appliances, cookware, decor</p></div>
+      <div class="cat-section-card" data-cat="Sports & Outdoors"><div class="icon">🏋️</div><h3>Sports & Outdoors</h3><p>Fitness, camping, recreation</p></div>
+      <div class="cat-section-card" data-cat="Pet Supplies"><div class="icon">🐾</div><h3>Pet Supplies</h3><p>Food, toys, accessories, health</p></div>
+      <div class="cat-section-card" data-cat="Tools & Home Improvement"><div class="icon">🔧</div><h3>Tools & Home Improvement</h3><p>Hardware, power tools, storage</p></div>
+      <div class="cat-section-card" data-cat="Toys & Games"><div class="icon">🎮</div><h3>Toys & Games</h3><p>Kids, board games, collectibles</p></div>
+      <div class="cat-section-card" data-cat="Lawn & Garden"><div class="icon">🌿</div><h3>Lawn & Garden</h3><p>Outdoor living, plants, tools</p></div>
+      <div class="cat-section-card" data-cat="Office Products"><div class="icon">📎</div><h3>Office Products</h3><p>Supplies, furniture, organization</p></div>
+      <div class="cat-section-card" data-cat="Household Essentials"><div class="icon">🧹</div><h3>Household Essentials</h3><p>Cleaning, storage, daily needs</p></div>
+      <div class="cat-section-card" data-cat="Consumer Accessories"><div class="icon">🎒</div><h3>Consumer Accessories</h3><p>Bags, tech accessories, lifestyle</p></div>
+      <div class="cat-section-card" data-cat="Industrial Safety"><div class="icon">🛡️</div><h3>Industrial Safety</h3><p>PPE, safety equipment, signage</p></div>
+      <div class="cat-section-card" data-cat="General Merchandise"><div class="icon">📦</div><h3>General Merchandise</h3><p>Everything else we source</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- Deals Section -->
+<div class="shell">
+  <section class="section" id="deals">
+    <div class="section-header">
+      <h2>Today's Best Deals</h2>
+      <a href="#" class="view-all">View All →</a>
+    </div>
+    <div class="featured-grid" id="dealsGrid"></div>
+  </section>
+</div>
+
+<!-- Features Stripe -->
+<div class="shell">
+  <section class="section" style="border-bottom:none" id="about">
+    <div class="section-header" style="text-align:center;justify-content:center">
+      <h2>Why TradeWinds Global</h2>
+    </div>
+    <p style="text-align:center;color:var(--mut);max-width:56ch;margin:-4px auto 26px;font-size:14px">We source from verified suppliers, price fairly, and deliver fast.</p>
+    <div class="features">
+      <div class="feature-card"><div class="icon">✓</div><h3>Verified Sourcing</h3><p>Every product from authorized distributors and manufacturers</p></div>
+      <div class="feature-card"><div class="icon">🚚</div><h3>Fast Shipping</h3><p>Reliable fulfillment through our 3PL network</p></div>
+      <div class="feature-card"><div class="icon">💎</div><h3>Quality Guaranteed</h3><p>Carefully curated products that meet our standards</p></div>
+      <div class="feature-card"><div class="icon">🤝</div><h3>Fair Prices</h3><p>Competitive pricing without the retail markup</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- Newsletter -->
+<div class="shell" style="padding-bottom:48px">
+  <div class="newsletter">
+    <h2>Stay in the loop</h2>
+    <p>New products, deals, and restocks — straight to your inbox.</p>
+    <form class="newsletter-form" id="newsletterForm">
+      <input type="email" placeholder="Enter your email" required>
+      <button class="btn btn-primary" type="submit">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+</main>
+
+<!-- Cart Drawer -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h2>Shopping Cart</h2>
+    <button class="cart-close" id="cartClose" aria-label="Close cart">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">Your cart is empty.</div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total"><span>Total</span><span id="cartTotal">$0.00</span></div>
+    <button class="checkout-btn" id="checkoutBtn" disabled>Checkout via Shopify</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<footer>
+  <div class="shell">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand-txt">TradeWinds<span class="sub">Global</span></div>
+        <p>Premium retail, curated sourcing, fair prices — delivered worldwide through our Shopify-powered storefront.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Shop</h4>
+        <a href="#featured">Featured</a>
+        <a href="#categories">Categories</a>
+        <a href="#deals">Deals</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#about">About</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Returns</a>
+      </div>
+      <div class="foot-col">
+        <h4>Support</h4>
+        <a href="#">Contact</a>
+        <a href="#">FAQ</a>
+        <a href="#">Shipping Info</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 TradeWinds Global. All rights reserved.</span>
+      <div class="foot-socials">
+        <a href="#" aria-label="Twitter/X">𝕏</a>
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="TikTok">TT</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ============================================================
+// Shopify Storefront API Integration
+// ============================================================
+const SHOPIFY_CONFIG = {
+  storeDomain: 'YOUR_STORE.myshopify.com',
+  storefrontAccessToken: 'YOUR_STOREFRONT_ACCESS_TOKEN',
+  apiVersion: '2024-07'
+};
+
+const CATEGORIES = [
+  'Beauty & Personal Care', 'Consumer Accessories', 'General Merchandise',
+  'Home & Kitchen', 'Household Essentials', 'Industrial Safety',
+  'Janitorial Supply', 'Lawn & Garden', 'Maintenance/Facility Supply',
+  'Office Products', 'Pet Supplies', 'Restaurant Supply',
+  'Sports & Outdoors', 'Tools & Home Improvement', 'Toys & Games'
+];
+
+const DEMO_PRODUCTS = [
+  {id:1,title:'Premium Skincare Set',category:'Beauty & Personal Care',price:49.99,compareAt:69.99,image:'https://placehold.co/400x400/1a2235/3b82f6?text=Skincare',badge:'sale'},
+  {id:2,title:'Stainless Cookware Set',category:'Home & Kitchen',price:129.99,compareAt:179.99,image:'https://placehold.co/400x400/1a2235/3b82f6?text=Cookware',badge:'bestseller'},
+  {id:3,title:'Camping Hammock + Straps',category:'Sports & Outdoors',price:34.99,compareAt:null,image:'https://placehold.co/400x400/1a2235/3b82f6?text=Hammock'},
+  {id:4,title:'Ergonomic Office Chair',category:'Office Products',price:289.99,compareAt:399.99,image:'https://placehold.co/400x400/1a2235/3b82f6?text=Chair',badge:'sale'},
+  {id:5,title:'Organic Dog Food 30lb',category:'Pet Supplies',price:54.99,compareAt:null,image:'https://placehold.co/400x400/1a2235/3b82f6?text=Dog+Food'},
+  {id:6,title:'Cordless Drill Kit 20V',category:'Tools & Home Improvement',price:79.99,compareAt:99.99,image:'https://placehold.co/400x400/1a2235/3b82f6?text=Drill',badge:'sale'},
+  {id:7,title:'Board Game Collection (6pk)',category:'Toys & Games',price:44.99,compareAt:null,image:'https://placehold.co/400x400/1a2235/3b82f6?text=Games'},
+  {id:8,title:'Gas Grill 4-Burner',category:'Lawn & Garden',price:349.99,compareAt:449.99,image:'https://placehold.co/400x400/1a2235/3b82f6?text=Grill',badge:'bestseller'},
+  {id:9,title:'Janitorial Cleaning Kit',category:'Janitorial Supply',price:38.99,compareAt:null,image:'https://placehold.co/400x400/1a2235/3b82f6?text=Cleaning'},
+  {id:10,title:'Safety Goggles (12pk)',category:'Industrial Safety',price:22.99,compareAt:29.99,image:'https://placehold.co/400x400/1a2235/3b82f6?text=Goggles',badge:'sale'},
+  {id:11,title:'Restaurant Chef Knife Set',category:'Restaurant Supply',price:89.99,compareAt:129.99,image:'https://placehold.co/400x400/1a2235/3b82f6?text=Knives'},
+  {id:12,title:'LED Desk Lamp',category:'Office Products',price:39.99,compareAt:null,image:'https://placehold.co/400x400/1a2235/3b82f6?text=Lamp'},
+  {id:13,title:'Resistance Bands Set',category:'Sports & Outdoors',price:24.99,compareAt:34.99,image:'https://placehold.co/400x400/1a2235/3b82f6?text=Bands',badge:'sale'},
+  {id:14,title:'Leather Crossbody Bag',category:'Consumer Accessories',price:59.99,compareAt:89.99,image:'https://placehold.co/400x400/1a2235/3b82f6?text=Bag',badge:'bestseller'},
+  {id:15,title:'Moisture Wicking T-Shirt (3pk)',category:'Sports & Outdoors',price:34.99,compareAt:null,image:'https://placehold.co/400x400/1a2235/3b82f6?text=Shirt'},
+  {id:16,title:'Air Purifier HEPA',category:'Home & Kitchen',price:149.99,compareAt:199.99,image:'https://placehold.co/400x400/1a2235/3b82f6?text=Purifier',badge:'sale'},
+];
+
+// ============================================================
+// CART
+// ============================================================
+let cart = JSON.parse(localStorage.getItem('tw_cart') || '[]');
+
+function saveCart() {
+  localStorage.setItem('tw_cart', JSON.stringify(cart));
+  updateCartUI();
+}
+
+function updateCartUI() {
+  const count = cart.reduce((s,i) => s + i.qty, 0);
+  document.getElementById('cartCount').textContent = count;
+  const itemsEl = document.getElementById('cartItems');
+  const totalEl = document.getElementById('cartTotal');
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  if (cart.length === 0) {
+    itemsEl.innerHTML = '<div class="cart-empty">Your cart is empty.</div>';
+    totalEl.textContent = '$0.00';
+    checkoutBtn.disabled = true;
+    return;
+  }
+  let html = '', total = 0;
+  cart.forEach((item, idx) => {
+    total += item.price * item.qty;
+    html += `<div class="cart-item"><img src="${item.image}" alt="${item.title}" loading="lazy"><div class="cart-item-info"><h4>${item.title}</h4><div class="meta">$${item.price.toFixed(2)}</div><div class="cart-item-qty"><button onclick="updateQty(${idx},${item.qty-1})">−</button><span>${item.qty}</span><button onclick="updateQty(${idx},${item.qty+1})">+</button><button onclick="updateQty(${idx},0)" style="background:none;border:none;color:#ef4444;font-size:12px;margin-left:8px">Remove</button></div></div></div>`;
+  });
+  itemsEl.innerHTML = html;
+  totalEl.textContent = '$' + total.toFixed(2);
+  checkoutBtn.disabled = false;
+}
+
+function updateQty(idx, qty) {
+  if (qty <= 0) cart.splice(idx, 1);
+  else cart[idx].qty = qty;
+  saveCart();
+}
+
+function addToCart(product) {
+  const existing = cart.find(i => i.id === product.id);
+  if (existing) existing.qty++;
+  else cart.push({...product, qty: 1, image: product.image || 'https://placehold.co/400x400/1a2235/3b82f6?text=Product'});
+  saveCart();
+  showToast('Added to cart ✓');
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ============================================================
+// Shopify API
+// ============================================================
+async function shopifyFetch(query) {
+  if (SHOPIFY_CONFIG.storeDomain === 'YOUR_STORE.myshopify.com') return null;
+  try {
+    const res = await fetch(`https://${SHOPIFY_CONFIG.storeDomain}/api/${SHOPIFY_CONFIG.apiVersion}/graphql.json`, {
+      method: 'POST',
+      headers: {'X-Shopify-Storefront-Access-Token': SHOPIFY_CONFIG.storefrontAccessToken,'Content-Type': 'application/json'},
+      body: JSON.stringify({query})
+    });
+    return await res.json();
+  } catch(e) { return null; }
+}
+
+async function loadShopifyProducts() {
+  const query = `{products(first:20){edges{node{id title description handle tags priceRange{minVariantPrice{amount currencyCode}} compareAtPriceRange{minVariantPrice{amount currencyCode}} images(first:1){edges{node{url altText}}}}}}}`;
+  const result = await shopifyFetch(query);
+  if (result?.data?.products?.edges?.length) {
+    return result.data.products.edges.map(e => ({id:e.node.id,title:e.node.title,category:e.node.tags?.[0]||'General Merchandise',price:parseFloat(e.node.priceRange.minVariantPrice.amount),compareAt:e.node.compareAtPriceRange?.minVariantPrice?.amount?parseFloat(e.node.compareAtPriceRange.minVariantPrice.amount):null,image:e.node.images.edges[0]?.node.url,handle:e.node.handle}));
+  }
+  return null;
+}
+
+// ============================================================
+// Render
+// ============================================================
+function renderProducts(products, containerId) {
+  const container = document.getElementById(containerId);
+  const loading = document.getElementById(containerId + 'Loading');
+  if (loading) { loading.style.display = 'none'; loading.remove(); }
+  container.style.display = 'grid';
+  products.forEach(p => {
+    const badge = p.badge === 'sale' ? '<div class="product-badge sale">Sale</div>' : p.badge === 'bestseller' ? '<div class="product-badge bestseller">Best Seller</div>' : '';
+    const compareHtml = p.compareAt ? `<span class="price-compare">$${p.compareAt.toFixed(2)}</span>` : '';
+    container.innerHTML += `<div class="product-card"><div class="product-image-wrap"><img src="${p.image}" alt="${p.title}" loading="lazy">${badge}</div><div class="product-body"><div class="product-category">${p.category}</div><div class="product-title">${p.title}</div><div class="product-price"><span class="price-current">$${p.price.toFixed(2)}</span>${compareHtml}</div><button class="add-to-cart" onclick="handleAddToCart(this,${p.id})">Add to Cart</button></div></div>`;
+  });
+}
+
+function handleAddToCart(btn, productId) {
+  const product = DEMO_PRODUCTS.find(p => p.id === productId);
+  if (product) { addToCart(product); btn.textContent = '✓ Added'; btn.classList.add('added'); setTimeout(() => { btn.textContent = 'Add to Cart'; btn.classList.remove('added'); }, 2000); }
+}
+
+function renderCategoryChips() {
+  const track = document.getElementById('catTrack');
+  track.innerHTML = CATEGORIES.map(c => `<div class="cat-chip" data-cat="${c}">${c}</div>`).join('');
+  document.querySelectorAll('.cat-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const filtered = DEMO_PRODUCTS.filter(p => p.category === chip.dataset.cat);
+      document.getElementById('featuredGrid').innerHTML = '';
+      if (filtered.length) renderProducts(filtered, 'featuredGrid');
+      else document.getElementById('featuredGrid').innerHTML = '<p style="color:var(--mut2);grid-column:1/-1;text-align:center;padding:40px 0">No products in this category yet.</p>';
+    });
+  });
+}
+
+function renderAllProducts() {
+  document.getElementById('featuredGrid').innerHTML = '';
+  renderProducts(DEMO_PRODUCTS, 'featuredGrid');
+}
+
+function renderDeals() {
+  const deals = DEMO_PRODUCTS.filter(p => p.compareAt);
+  if (!deals.length) { document.getElementById('dealsGrid').innerHTML = '<p style="color:var(--mut2);grid-column:1/-1;text-align:center;padding:40px 0">No deals available right now.</p>'; return; }
+  document.getElementById('dealsGrid').innerHTML = '';
+  renderProducts(deals, 'dealsGrid');
+}
+
+// ============================================================
+// Init
+// ============================================================
+document.addEventListener('DOMContentLoaded', async () => {
+  renderCategoryChips();
+  renderAllProducts();
+  renderDeals();
+  updateCartUI();
+
+  document.querySelectorAll('.cat-section-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const cat = card.dataset.cat;
+      document.getElementById('featured').scrollIntoView({behavior:'smooth'});
+      document.querySelectorAll('.cat-chip').forEach(c => c.classList.toggle('active', c.dataset.cat === cat));
+      const filtered = DEMO_PRODUCTS.filter(p => p.category === cat);
+      document.getElementById('featuredGrid').innerHTML = '';
+      if (filtered.length) renderProducts(filtered, 'featuredGrid');
+      else document.getElementById('featuredGrid').innerHTML = '<p style="color:var(--mut2);grid-column:1/-1;text-align:center;padding:40px 0">No products in this category yet.</p>';
+    });
+  });
+
+  document.getElementById('cartBtn').addEventListener('click', () => {
+    document.getElementById('cartOverlay').classList.add('open');
+    document.getElementById('cartDrawer').classList.add('open');
+  });
+  document.getElementById('cartClose').addEventListener('click', closeCart);
+  document.getElementById('cartOverlay').addEventListener('click', closeCart);
+  function closeCart() {
+    document.getElementById('cartOverlay').classList.remove('open');
+    document.getElementById('cartDrawer').classList.remove('open');
+  }
+
+  document.getElementById('checkoutBtn').addEventListener('click', () => {
+    if (SHOPIFY_CONFIG.storeDomain !== 'YOUR_STORE.myshopify.com') {
+      window.open(`https://${SHOPIFY_CONFIG.storeDomain}/cart/${cart.map(i=>`id:${i.id.replace('gid://shopify/Product/','')}`).join(',')}`, '_blank');
+    } else showToast('Connect your Shopify store to enable checkout.');
+  });
+
+  document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = e.target.querySelector('input');
+    if (input.value) { showToast('Subscribed! Welcome to TradeWinds Global.'); input.value = ''; }
+  });
+
+  document.getElementById('menuBtn').addEventListener('click', () => document.getElementById('mobNav').classList.toggle('open'));
+  document.querySelectorAll('[data-nav]').forEach(a => a.addEventListener('click', () => document.getElementById('mobNav').classList.remove('open')));
+});
+</script>
+</body>
+</html>
