@@ -550,9 +550,11 @@ async function loadShopifyProducts() {
 // ============================================================
 function renderProducts(products, containerId) {
   const container = document.getElementById(containerId);
+  if (!container) return;
   const loading = document.getElementById(containerId + 'Loading');
   if (loading) { loading.style.display = 'none'; }
   container.style.display = 'grid';
+  container.innerHTML = '';
   products.forEach(p => {
     const badge = p.badge === 'sale' ? '<div class="product-badge sale">Sale</div>' : p.badge === 'bestseller' ? '<div class="product-badge bestseller">Best Seller</div>' : '';
     const compareHtml = p.compareAt ? `<span class="price-compare">$${p.compareAt.toFixed(2)}</span>` : '';
